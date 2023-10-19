@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+  <style>
+    .hero{
+      display: flex;
+      width: 200px;
+      /* aspect-ratio: 1; */
+    }
+    div{
+      border: 1px solid black;
+      margin-bottom: 20px;
+
+    }
+  </style>
+  
+  </head>
+  <body>
+    <h1>Yuki</h1>
+    <!-- <form onsubmit="submit()" class="d-flex" role="search">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search your anime"
+        aria-label="Search" 
+        id="query"
+        
+      />
+      <button class="btn btn-outline-success click" type="submit" id="click">
+        Search
+      </button>
+    </form> -->
+
+    <form id = "form" onsubmit="search()">
+        <input type="text" name="q" placeholder="Search..." id="query">
+        <button type="submit">Search</button>
+      </form>
+      <p id="log"></p>
+    <div class="hero">Hero</div>
+    <a href="login.html">Login Page</a>
+    <a href="registration.html">Registration Page</a>
+
+    
+    <script src="script.js" ></script>
+  </body>
+</html>

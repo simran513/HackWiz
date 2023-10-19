@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: rgb(41, 37, 37);
+        }
+
+        .registration-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            width: 300px;
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .anime-character {
+            position: absolute;
+            top: 42.3%;
+            right: 87.5%;
+            transform: translateY(-50%);
+            max-height: 3000px;
+        }
+
+        .registration-form {
+            text-align: center;
+            color: #fff;
+        }
+
+        .registration-input {
+            margin: 10px 0;
+            padding: 5px;
+            width: 100%;
+            font-size: 1.6rem;
+            border: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .registration-input:hover,
+        .registration-input:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+
+        .registration-button {
+            background: var(--red);
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.7rem;
+        }
+
+        .registration-button:hover {
+            background: red;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .registration-captcha {
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Style the password input to mask with '*' */
+        .password-input {
+            font-family: monospace;
+        }
+
+        /* Style for error message when passwords don't match */
+        .password-mismatch {
+            color: red;
+        }
+
+        /* Style for the login link */
+        .login-link {
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .login-link a:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <section class="home">
+        <div class="box">
+        </div>
+    </section>
+
+    <div class="registration-container">
+        <img src="log-in-hime.png" alt="Login Hime" class="anime-character">
+        
+        <form class="registration-form" onsubmit="return validateRegistration();" action="/registration" method="post"> 
+            <h2>Register</h2>
+            <input type="text" class="registration-input" placeholder="Username" name="username">
+            <input type="email" class="registration-input" placeholder="Email" name="email">
+            <input type="password" class="registration-input password-input" placeholder="Create Password" id="create-password" name="password">
+            <input type="password" class="registration-input password-input" placeholder="Confirm Password" id="confirm-password" name="confirmpassword">
+            <div id="password-mismatch" class="password-mismatch"></div>
+            <div class="registration-captcha">
+                <!-- Add your captcha here -->
+                <img src="captcha.png" alt="Captcha">
+            </div>
+            <button type="submit" class="registration-button">Register</button>
+        </form>
+
+        <!-- Add the "Already have an account? Login" text and link -->
+        <div class="login-link">
+            Already have an account? <a href="/login">Login</a>
+        </div>
+    </div>
+
+    <script>
+        function validateRegistration() {
+            const createPassword = document.getElementById('create-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const passwordMismatch = document.getElementById('password-mismatch');
+
+            if (createPassword !== confirmPassword) {
+                passwordMismatch.textContent = 'Passwords do not match.';
+                return false;
+            } else {
+                passwordMismatch.textContent = '';
+            }
+
+            // You can add further validation for username, email, and captcha if needed
+
+            return true;
+        }
+    </script>
+</body>
+</html>
