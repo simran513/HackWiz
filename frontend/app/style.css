@@ -154,6 +154,10 @@ header .icons #menu-bars{
     width :30px;
     cursor: pointer;
 }
+.moonicon{
+    width :30px;
+    cursor: pointer;
+}
 
 
 .home{
@@ -402,9 +406,7 @@ header .icons #menu-bars{
     transition: 0.3s all linear;
 }
 
-.box second{
-background-image: url('./images/home-img-1.png');
-}
+
 
 
 
