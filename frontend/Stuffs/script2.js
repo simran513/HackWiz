@@ -25,7 +25,8 @@ const main = async() => {
     checkPermission()
     const reg = await registerSW()
     reg.showNotification("Hello World")
-}
+}  
+
 
 // checkPermission()
 // registerSW()
