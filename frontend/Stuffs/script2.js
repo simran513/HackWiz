@@ -23,12 +23,13 @@ const requestNotificationPermission = async() =>{
 
 const main = async() => {
     checkPermission()
-    const reg = await registerSW()
-    reg.showNotification("Hello World")
+    await requestNotificationPermission()
+    await registerSW()
+    // reg.showNotification("Hello World")
 }  
 
 
 // checkPermission()
 // registerSW()
 // requestNotificationPermission()
-main()
+// main()
